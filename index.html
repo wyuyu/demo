@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>初级进阶 考核 三</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cda458d1-292a-4475-a4b6-5ca332ac81b3" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_the_unicorn_in_captivity.jpg" style="object-position:center 30.000000000000004%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🏆</span></div><h1 class="page-title">初级进阶 考核 三</h1></header><div class="page-body"><blockquote id="492effbf-b53d-423d-8565-d18eb2e6333f" class="">独立解答</blockquote><h1 id="a9f37f48-be62-4859-b4b8-e72e58a2656f" class="">笔试<mark class="highlight-red">（2h30min）</mark></h1><hr id="c1b8e06b-9d66-4c28-8f18-76a1a465a7fc"/><div id="2b7901a7-1584-42e9-b337-3277236191d9" class="column-list"><div id="b1193cfc-5fdf-4503-a2ce-fcefc0f13b5b" style="width:50%" class="column"><h3 id="2daa57eb-f386-48c3-b3f2-846f5c10964c" class="">HTML CSS <mark class="highlight-red">（60 min）</mark></h3><hr id="ea0147d7-e3c8-4b45-9225-c01f1e98793e"/><ol id="b24bf579-cbf9-4d1a-921f-d8250c6dc779" class="numbered-list" start="1"><li>还原以下设计图，要求百分百 UI 还原</li></ol><ol id="9cb0c0c3-5f6f-475e-a66a-6cf3d52b0803" class="numbered-list" start="2"><li>代码结构合理</li></ol><ol id="010ce7e1-7707-4ceb-b2fb-098d5c4d127a" class="numbered-list" start="3"><li>样式运用准确</li></ol><ol id="6ef8c7c5-c694-44ce-b571-370b6c4e7f6c" class="numbered-list" start="4"><li>合理添加注释</li></ol><ol id="16db9eea-4acb-4fd6-b6b8-aba1b1695189" class="numbered-list" start="5"><li>细节把控到位</li></ol><ol id="15f5c2f8-0bd6-4d56-be88-18902d65452d" class="numbered-list" start="6"><li>支持自适应布局</li></ol></div><div id="6dd6f1b8-e8bb-41d6-8eda-6eb45e88ac7c" style="width:50%" class="column"><h3 id="8e118c15-2f4b-482a-ace1-2da32977af9a" class="">JS <mark class="highlight-red">（90 min）</mark></h3><hr id="5b8b9783-cad3-425c-95cb-899d74fb2dfd"/><ol id="7a220587-265d-4c88-9cbd-9f31376a315a" class="numbered-list" start="1"><li>实现 Windows 自带计算器，效果图给定</li></ol><ol id="fe5a5cf7-61b7-4e0f-9725-4c9b90fefcee" class="numbered-list" start="2"><li>依据效果图 百分百 UI 还原</li></ol><ol id="ba3110d2-e34c-4a13-a08c-a1ce2234b12c" class="numbered-list" start="3"><li>代码结构合理</li></ol><ol id="1959e653-e5b2-4d45-9d40-6f3272f7340c" class="numbered-list" start="4"><li>样式运用准确</li></ol><ol id="5e47ac8b-a6a7-41cf-a3d0-036dde12ebf2" class="numbered-list" start="5"><li>合理添加注释</li></ol><ol id="5d6e8427-fea7-4a0a-bc59-1c0c279902cc" class="numbered-list" start="6"><li><mark class="highlight-red">注意数据安全</mark></li></ol><ol id="e4a40666-83f2-45b6-8612-f40a7aeda8be" class="numbered-list" start="7"><li>细节把控到位</li></ol><ol id="18380044-fdd2-4c2b-816a-b87066d1e4c2" class="numbered-list" start="8"><li>只需实现 单目 运算即可</li></ol></div></div><h3 id="25d012d2-800c-4cc7-911e-765921786526" class="">设计图</h3><hr id="5d4904c9-a7c7-4f61-b946-ced7a91dc517"/><div id="57362a48-06b7-4be7-9a99-a086cd1ffbc8" class="column-list"><div id="1cc04c8d-11a9-4650-920f-3545557b4f09" style="width:50%" class="column"><h3 id="834771ab-5307-4bce-b434-a0f33193f55c" class="">在线访问地址（点击下方Figma 地址即可访问）</h3><figure id="3690ec6a-49fa-4999-b315-7cd889c91ab4"><div class="source"><a href="https://www.figma.com/embed?embed_host=notion&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2FB41qdTucsU3hTLSX34wAlG%2FMusic-Player">https://www.figma.com/embed?embed_host=notion&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2FB41qdTucsU3hTLSX34wAlG%2FMusic-Player</a></div></figure></div><div id="1f7c8514-1be5-4c31-8334-030b008cc06b" style="width:50%" class="column"><h3 id="565a79c9-af6c-4f0d-b270-b574a6eddfa6" class="">离线文件（点击文件即可下载）</h3><figure id="26dd6ad0-01f9-465f-8ae7-fa41abae4340"><div class="source"><a href="%E5%88%9D%E7%BA%A7%E8%BF%9B%E9%98%B6%20%E8%80%83%E6%A0%B8%20%E4%B8%89%2026dd6ad001f9465f8ae7fa41abae4340/Music_Player.fig">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8f91ef87-3bf4-4720-afa0-5701fae86ee1/Music_Player.fig</a></div></figure></div></div><h3 id="c9b5b6c4-c28b-4286-89c5-709da15fdc59" class="">计算器效果图</h3><figure id="4ef95f2c-d909-4be6-b520-97b806a525a7" class="image"><a href="%E5%88%9D%E7%BA%A7%E8%BF%9B%E9%98%B6%20%E8%80%83%E6%A0%B8%20%E4%B8%89%2026dd6ad001f9465f8ae7fa41abae4340/Untitled.png"><img style="width:2560px" src="%E5%88%9D%E7%BA%A7%E8%BF%9B%E9%98%B6%20%E8%80%83%E6%A0%B8%20%E4%B8%89%2026dd6ad001f9465f8ae7fa41abae4340/Untitled.png"/></a></figure><h1 id="d95bd3ee-1a77-4f65-9ca3-204dcade26f3" class="">面试<mark class="highlight-red">（30min）</mark></h1><hr id="d8357558-f7c7-4f47-a1d0-33e18b2fb2bb"/><blockquote id="97f991cc-8a7b-4300-9294-66282cd0cdb7" class="">中阶成员自愿参与，<mark class="highlight-red">核心标准：你愿不愿意接手他写的代码？</mark></blockquote><blockquote id="5072134e-0900-4a31-8672-cc8be0d178e6" class="">务必做到实事求是，<mark class="highlight-red">不用客气：别不忍心打低分，偏袒不利于他人。</mark></blockquote><h2 id="dc96788f-4670-4217-b80d-77dd6149202b" class="">基本流程</h2><hr id="7623a3dd-f228-4712-aae1-fc08a578a801"/><div id="ae2e88c8-d1b9-4d0d-ae60-e42af1f3ccfd" class="column-list"><div id="da837ff8-8a03-44e9-aca1-6dffa66bead2" style="width:50%" class="column"><h3 id="37298f11-60a1-4b96-9100-cea546d041da" class="">项目验收</h3><hr id="72201ea1-d919-48c1-acc6-7e1fd315c38a"/><ol id="8da81a49-8c82-409b-ba62-0dccd08eef3b" class="numbered-list" start="1"><li>百分百 UI 还原</li></ol><ol id="7532bc0f-8452-4906-91af-c1c52f21f2f0" class="numbered-list" start="2"><li>百分百 功能实现</li></ol></div><div id="599bd793-fed8-414f-9614-560cdd98a762" style="width:50%" class="column"><h3 id="bff277c5-0b91-4e03-b3f0-487794d3a87c" class="">现场考核</h3><hr id="23ba91b1-a729-4547-830a-766ac59568ab"/><ol id="6b78a77b-40c4-4963-8c85-ed55201c14f2" class="numbered-list" start="1"><li>找出项目 Bug 询问其解决办法</li></ol><ol id="a789dd20-3f02-4fb0-83ba-013a89a3752d" class="numbered-list" start="2"><li>找一处功能，询问其实现思路以及可能出现的 Bug</li></ol></div></div><h1 id="00d695dd-6857-4ca4-91c0-3ad969f75d18" class="">评分细则</h1><hr id="7f27e9b0-ea7d-4161-9a91-524c7a8e8bcc"/><div id="38770738-6cf1-4fd7-a8da-e6e72f741641" class="column-list"><div id="249bb728-c20a-467f-9472-3f6211d6aef8" style="width:50%" class="column"><h2 id="4d870dad-ea49-4436-b974-a1e8ea1e72a4" class="">HTML CSS （<mark class="highlight-red">10分</mark>）</h2><hr id="a0605fe0-0e24-459a-af18-583def8dfa9a"/><blockquote id="2d386eb7-befc-4dd6-ad23-abaecd2dbe60" class="">百分百还原</blockquote><ol id="36ff0f22-829a-4d27-befc-63363305f97e" class="numbered-list" start="1"><li>一处 HTML Bug 扣两分</li></ol><ol id="209786b2-f1d4-406d-adfd-71e0b3fee8ac" class="numbered-list" start="2"><li>一处 CSS Bug 扣一分</li></ol><ol id="fb4f87cb-23c6-4d6f-a14d-43eef1612841" class="numbered-list" start="3"><li>中文命名或字母命名 一处扣一分</li></ol><ol id="48bbfc1a-1006-43d8-91e5-fe87ea2f1325" class="numbered-list" start="4"><li>代码晦涩难读（未格式化） 扣三分</li></ol><ol id="605ef4a4-6e59-496f-8097-0c152cfba240" class="numbered-list" start="5"><li>关键部分缺少注释（不得低于 10 处） 一处扣一分</li></ol></div><div id="872c7edc-6c40-4ad7-9460-7ecc864ab8a6" style="width:50%" class="column"><h2 id="157b6fff-5d08-4b24-879a-86387f4288a5" class="">JS （<mark class="highlight-red">10分</mark>）</h2><hr id="b0503d0c-8a98-4276-a699-8862cba8ca00"/><blockquote id="cd2856bf-c2e6-451f-881d-c0bc2341dc7e" class="">支持数据单目，加、减、乘、除 运算并正确显示</blockquote><ol id="10a734d8-c5f5-4af9-8a4a-0c60b6cbe7b8" class="numbered-list" start="1"><li>HTML CSS 一处 Bug 扣一分</li></ol><ol id="e4cce709-824d-4c13-a965-8e6c87a62727" class="numbered-list" start="2"><li>功能点都未实现 一处扣 一 分</li></ol><ol id="49687e98-452d-49cf-9483-e1e2347ce6f4" class="numbered-list" start="3"><li>中文命名或字母命名 一处扣一分</li></ol><ol id="c01f2334-cf4c-44e0-b393-85f2ff7eb9ec" class="numbered-list" start="4"><li>代码晦涩难读（未格式化） 扣三分</li></ol><ol id="06f143b7-5ff2-4a64-b7ae-40dde83e22ba" class="numbered-list" start="5"><li>关键部分缺少注释（不得低于 10处）一处扣一分</li></ol></div></div><h1 id="2cd91e99-6bcd-4679-8cd5-29686e8f2ccb" class=""><mark class="highlight-red">综合评分低于 7 分，采取留阶</mark></h1><hr id="d07b6891-b3b1-4a12-bb56-eacb6ccd3e3c"/><blockquote id="f431a761-7450-4c3f-ae24-dd510986cd31" class="">7 分以下的同学，有一次加试机会（自愿），满足要求即可进入中阶</blockquote></div></article></body></html>
